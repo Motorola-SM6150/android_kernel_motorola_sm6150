@@ -20,7 +20,7 @@ supported.patchlevels=
 
 # shell variables
 block=/dev/block/bootdevice/by-name/boot;
-is_slot_device=0;
+is_slot_device=1;
 ramdisk_compression=auto;
 patch_vbmeta_flag=auto;
 
@@ -53,17 +53,17 @@ write_boot;
 
 
 # shell variables
-#block=vendor_boot;
-#is_slot_device=1;
-#ramdisk_compression=auto;
-#patch_vbmeta_flag=auto;
+block=vendor_boot;
+is_slot_device=1;
+ramdisk_compression=auto;
+patch_vbmeta_flag=auto;
 
 # reset for vendor_boot patching
-#reset_ak;
+reset_ak;
 
 
 ## AnyKernel vendor_boot install
-#split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
+split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
 
-#flash_boot;
+flash_boot;
 ## end vendor_boot install
